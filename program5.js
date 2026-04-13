@@ -6,9 +6,7 @@ async function displayTable(selectedMajor) {
 
         var template = Handlebars.compile(templateScript);
 
-        var context = responce.filter(function(stu, selectedMajor) {
-            return stu.major == selectedMajor;
-        });
+        var context = responce.filter( (item) => item.major == selectedMajor);
 
         var compTemplate = template({student : context});
 
