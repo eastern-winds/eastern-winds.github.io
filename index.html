@@ -2,7 +2,26 @@
 <html>
   <head>
     <title>EC : Program 5</title>
-   <script src="program5.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Snippet directly from https://getbootstrap.com/ -->
+
+    <!-- Include Handlebars from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <!-- Snippet directly from https://handlebarsjs.com/guide/ -->
+
+    <!-- Handlebars template(s) -->
+    <script id="tblTemplate" type="text/x-handlebars-template">
+        <table class="table table-striped">
+            <tr> <th>Name</th> <th>Major</th> <th>Midterm</th> <th>Final</th> </tr>
+            {{#each student}}
+            <tr> <td>{{name}}</td> <td>{{major}}</td> <td>{{midterm}}</td> <td>{{final}}</td></tr>
+            {{/each}}
+        </table>
+    </script>
+
+    <!-- Page Logic -->>
+    <script src="program5.js"></script>
   </head>
 
   <body>
@@ -11,10 +30,10 @@
       <h2>Select a Major</h2>
 
       <div class="container">
-        <button>CIT Majors</button>
-        <button>Business Majors</button>
+        <button id="citmajor" class="btn btn-primary">CIT Majors</button>
+        <button id="busmajor" class="btn btn-primary">Business Majors</button>
       </div>
-      
+
       <h3>We filter our dataset by major</h3>
       <div id="out" class="container">
 
