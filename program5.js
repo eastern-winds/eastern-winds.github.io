@@ -2,11 +2,13 @@ async function displayTable(selectedMajor) {
     var responce = await fetch("cit5students.json");
 
     if(responce.ok) {
+        var data = await responce.json();
+        
         var templateScript = document.getElementById("tblTemplate").innerHTML;
 
         var template = Handlebars.compile(templateScript);
 
-        var context = responce.filter( (item) => item.major == selectedMajor);
+        context = data.filter( (item) => item.major == selectedMajor);
 
         var compTemplate = template({student : context});
 
