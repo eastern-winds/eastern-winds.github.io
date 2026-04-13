@@ -2,7 +2,7 @@ async function displayTable(selectedMajor) {
     var responce = await fetch("cit5students.json");
 
     if(responce.ok) {
-        var templateScript = document.getElementById("tblTemplate");
+        var templateScript = document.getElementById("tblTemplate").innerHTML;
 
         var template = Handlebars.compile(templateScript);
 
